@@ -1,4 +1,4 @@
-package com.example.blog.service.mapper;
+package com.example.blog.post.service.mapper;
 
 import org.mapstruct.BeanMapping;
 import org.mapstruct.MappingTarget;

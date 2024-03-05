@@ -1,11 +1,12 @@
-package com.example.blog.service;
+package com.example.blog.post.service;
 
-import com.example.blog.model.Post;
-import com.example.blog.repository.PostRepository;
-import com.example.blog.service.dto.PostRequestDTO;
-import com.example.blog.service.dto.PostResponseDTO;
-import com.example.blog.service.mapper.PostMapper;
-import com.example.blog.service.mapper.PostResponseMapper;
+import com.example.blog.post.model.Post;
+import com.example.blog.post.repository.PostRepository;
+import com.example.blog.post.service.dto.PostRequestDTO;
+import com.example.blog.post.service.dto.PostResponseDTO;
+import com.example.blog.post.service.mapper.PostMapper;
+import com.example.blog.post.service.mapper.PostResponseMapper;
+import com.example.blog.user.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -50,6 +51,7 @@ public class PostService {
     }
 
     public PostResponseDTO createPost(PostRequestDTO postRequestDTO) {
+        LOG.info("CREATE POST");
         Post newPost = postMapper.toEntity(postRequestDTO);
         newPost.setCreated_date(Instant.now());
         newPost.setCreatedBy("ADMIN");

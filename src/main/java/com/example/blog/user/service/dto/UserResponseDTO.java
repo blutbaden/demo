@@ -1,4 +1,4 @@
-package com.example.blog.service.dto;
+package com.example.blog.user.service.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -11,10 +11,10 @@ import java.time.Instant;
 @NoArgsConstructor
 @Data
 @Builder
-public class PostResponseDTO {
+public class UserResponseDTO {
     private String id;
-    private String title;
-    private String content;
+    private String name;
+    private String email;
     private Instant created_date;
     private String createdBy;
 }

@@ -1,8 +1,8 @@
-package com.example.blog.controller;
+package com.example.blog.post.controller;
 
-import com.example.blog.service.PostService;
-import com.example.blog.service.dto.PostRequestDTO;
-import com.example.blog.service.dto.PostResponseDTO;
+import com.example.blog.post.service.PostService;
+import com.example.blog.post.service.dto.PostRequestDTO;
+import com.example.blog.post.service.dto.PostResponseDTO;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
