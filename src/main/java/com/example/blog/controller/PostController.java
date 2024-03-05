@@ -1,7 +1,8 @@
 package com.example.blog.controller;
 
-import com.example.blog.model.Post;
 import com.example.blog.service.PostService;
+import com.example.blog.service.dto.PostRequestDTO;
+import com.example.blog.service.dto.PostResponseDTO;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -17,18 +18,18 @@ public class PostController {
     }
 
     @GetMapping("/")
-    public List<Post> getAllPosts() {
+    public List<PostResponseDTO> getAllPosts() {
         return postService.getAll();
     }
 
-    @GetMapping("/getTitle")
-    public Post getPostByTile(@RequestParam(name = "query", required = true) String title) {
+    @GetMapping("/search/first-by-title")
+    public PostResponseDTO getFirstPostByTitle(@RequestParam(name = "query", required = true) String title) {
         return postService.getPostByTitle(title);
     }
 
     @PostMapping("/")
-    public Post save(@RequestBody Post post) {
-        return postService.createPost(post);
+    public PostResponseDTO save(@RequestBody PostRequestDTO postRequestDTO) {
+        return postService.createPost(postRequestDTO);
     }
 
 }
